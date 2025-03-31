@@ -213,7 +213,8 @@ public class GameView extends JPanel {
         }
     }
     
-    public void updateAnimalSelection(int player, String animal) {
+    public void updateAnimalSelection(int player, String animal) 
+    {
         if (player == 1) {
             p1AnimalLabel.setText(model.getPlayer1Name() + " : " + animal);
         } else {

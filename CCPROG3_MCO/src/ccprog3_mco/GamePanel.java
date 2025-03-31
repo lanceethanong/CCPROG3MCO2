@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 
 public class GamePanel extends JPanel implements Runnable {
-    private final int FPS = 300;
+    private final int FPS = 999999999;
     private Thread gameThread;
     private GameModel model;
     private GameView view;

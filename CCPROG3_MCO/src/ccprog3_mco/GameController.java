@@ -82,36 +82,6 @@ public class GameController {
             }
         }
     }
-    
-//    private void handleMousePress(int x, int y) {
-//        if (model.getBoard() == null) return;
-//        
-//        int row = y / Board.SQUARE_SIZE;
-//        int col = x / Board.SQUARE_SIZE;
-//        Tile clickedTile = model.getBoard().getTile(row, col);
-//        
-//        if (clickedTile != null && clickedTile.getPiece() != null 
-//            && clickedTile.getPiece().getPlayerId() == model.getCurrentPlayer()) {
-//            model.setActivePiece(clickedTile.getPiece());
-//            view.repaint();
-//        }
-//    }
-//    
-//    private void handleMouseRelease(int x, int y) {
-//        if (model.getActivePiece() != null) {
-//            int row = y / Board.SQUARE_SIZE;
-//            int col = x / Board.SQUARE_SIZE;
-//            
-//            if (model.tryMovePiece(row, col)) {
-//                view.updateTurnIndicator();
-//            }
-//            
-//            model.setActivePiece(null);
-//            view.repaint();
-//        }
-//    }
-    
-    // Getters for mouse position
     public int getMouseX() { return mouse.x; }
     public int getMouseY() { return mouse.y; }
 }
