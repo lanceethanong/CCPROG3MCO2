@@ -5,14 +5,33 @@ import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
 
+/**
+ * Class: BoardView
+ * Description: View class responsible for rendering the game board and pieces
+ * @author Lance Ethan S. Ong  & Nick Jenson Crescini S14 
+ */
 public class BoardView {
+    /* parameters of BoardView
+     * model : The Board model being displayed
+     */
     private Board model;
     
-    public BoardView(Board model) 
-    {
+    /**
+     * Method: BoardView
+     * Description: Constructs a BoardView with specified model
+     * @param model : The Board model to display
+     * @author Lance Ethan S. Ong  & Nick Jenson Crescini S14
+     */
+    public BoardView(Board model) {
         this.model = model;
     }
     
+    /**
+     * Method: displayBoard
+     * Description: Renders the game board
+     * @param g : The Graphics2D context to draw on
+     * @author Lance Ethan S. Ong  & Nick Jenson Crescini S14
+     */
     public void displayBoard(Graphics2D g) {
         g.setFont(new Font("Arial", Font.BOLD, 16));
 
@@ -51,9 +70,16 @@ public class BoardView {
         }
     }
 
-    
-    private void initiatePiece(Graphics2D g, Piece piece, int x, int y) 
-    {
+    /**
+     * Method: initiatePiece
+     * Description: Draws a game piece on the board
+     * @param g : The Graphics2D context
+     * @param piece : The piece to draw
+     * @param x : The x-coordinate
+     * @param y : The y-coordinate
+     * @author Lance Ethan S. Ong  & Nick Jenson Crescini S14
+     */
+    private void initiatePiece(Graphics2D g, Piece piece, int x, int y) {
         String pieceType = piece.getType().toLowerCase();
         int playerId = piece.getPlayerId();
         
@@ -70,5 +96,4 @@ public class BoardView {
                         x + Board.SQUARE_SIZE / 4, y + Board.SQUARE_SIZE / 2);
         }
     }
-
 }

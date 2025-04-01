@@ -208,9 +208,16 @@ public class Piece {
                 if(canMove(targetTile)) //If is valid direction
                 {
                     if(currentTile instanceof Lake && this instanceof Swimmer) //Special rule that rat cannot capture any pieces outside the lake while still being inside
-                    {            	
+                    {
+                    	if(!(targetTile instanceof Lake)) //Tries to capture elephant outside the lake
+                    	{
                     	JOptionPane.showMessageDialog(null, "Rat cannot capture any pieces outside the lake while inside the lake!", "Invalid Move", JOptionPane.ERROR_MESSAGE); //shows an error message
                         return false;//invalid move
+                    	}
+                    	else //lake to lake capture is allowed
+                    	{
+                    		return true;
+                    	}
                     }
                     return true; // valid move(capturable piece)
                 }
