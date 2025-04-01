@@ -1,5 +1,7 @@
 package ccprog3_mco;
 
+import java.io.IOException;
+
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane; //To alert of any error messages
 
@@ -56,16 +58,25 @@ public class Piece {
                 move(targetTile); //Moves the target to the tile
                 JOptionPane.showMessageDialog(null, this.getPlayer().getName() + " has captured the enemy base and is declared the winner!","Winner",JOptionPane.INFORMATION_MESSAGE); //Alerts that the game is over
                 
-                ImageIcon trophyIcon = new ImageIcon(getClass().getResource("/Pictures/congratulations.jpg")); // Icon
-                
-                JOptionPane.showMessageDialog //Shows end screen
-                (
-                    null, 
-                    "Congratulations "+this.getPlayer().getName() +" on winning the game and Thank You for Playing!\n",
-                    "Game Over",
-                    JOptionPane.INFORMATION_MESSAGE,
-                    trophyIcon 
-                );                
+                try {
+                    ImageIcon trophyIcon = new ImageIcon(getClass().getResource("/Picture/congratulations.jpg")); // Load icon
+                    
+                    JOptionPane.showMessageDialog(
+                        null, 
+                        "Congratulations " + this.getPlayer().getName() + " on winning the game and Thank You for Playing!\n",
+                        "Game Over",
+                        JOptionPane.INFORMATION_MESSAGE,
+                        trophyIcon
+                    );
+                } catch (NullPointerException e) {
+                    // Show message without an image
+                    JOptionPane.showMessageDialog(
+                        null, 
+                        "Congratulations " + this.getPlayer().getName() + " on winning the game and Thank You for Playing!\n",
+                        "Game Over",
+                        JOptionPane.INFORMATION_MESSAGE
+                    );
+                }              
                 System.exit(0); //closes the game
                 return true;
             }
