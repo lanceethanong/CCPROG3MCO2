@@ -1,7 +1,6 @@
 package ccprog3_mco;
 
 import java.awt.*;
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 
@@ -94,6 +93,8 @@ public class BoardView {
             g.drawImage(pieceImage, x + 5, y + 5, 
                        Board.SQUARE_SIZE - 10, Board.SQUARE_SIZE - 10, null);
         	 }
+        	 else  
+             throw new IOException("Image not found: " + imagePath); // Force catch block
         } catch (IOException | NullPointerException e) {
             g.setColor(Color.BLACK);
             g.setFont(new Font("Arial", Font.BOLD, 18));

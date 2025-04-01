@@ -374,6 +374,8 @@ public class GameView extends JPanel
             int pieceSize = Board.SQUARE_SIZE - 10;
             g2.drawImage(pieceImage, x - pieceSize / 2, y - pieceSize / 2, pieceSize, pieceSize, null);
         	}
+        	else
+        	throw new IOException("Image not found: " + imagePath); // Force catch block
         } catch (IOException e) { //If no image is available defaults to each pieces and tiles default label
             g2.setColor(Color.BLACK);
             g2.setFont(new Font("Arial", Font.BOLD, 18));
