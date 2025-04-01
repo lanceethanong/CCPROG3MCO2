@@ -56,7 +56,7 @@ public class Piece {
                 move(targetTile); //Moves the target to the tile
                 JOptionPane.showMessageDialog(null, this.getPlayer().getName() + " has captured the enemy base and is declared the winner!","Winner",JOptionPane.INFORMATION_MESSAGE); //Alerts that the game is over
                 
-                ImageIcon trophyIcon = new ImageIcon("src/Pictures/congratulations.jpg"); // Icon
+                ImageIcon trophyIcon = new ImageIcon(getClass().getResource("/Pictures/congratulations.jpg")); // Icon
                 
                 JOptionPane.showMessageDialog //Shows end screen
                 (
