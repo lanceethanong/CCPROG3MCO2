@@ -6,7 +6,7 @@ package ccprog3_mco;
  * @author Lance Ethan S. Ong   Nick Jenson Crescini S14
  * 
  */ 
-public class Cat extends Piece
+public class Cat extends Piece implements Hopper
 {
     /**
      * Method: Cat
